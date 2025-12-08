@@ -190,7 +190,6 @@ Pods/
 *.apk
 *.aar
 *.ap_
-build/
 
 # Cordova
 hooks/
