@@ -5,10 +5,9 @@
 ## Mục lục
 1. [Fork repository](#fork-repository)
 2. [Hiểu về mẫu MVC](#hiểu-về-mẫu-mvc)
-3. [Thiết lập dự án](#thiết-lập-dự-án)
-4. [Thay đổi theo mô hình MVC](#thay-đổi-theo-mô-hình-mvc)
-5. [Gửi Pull Requests](#gửi-pull-requests)
-6. [Cấu trúc dự án](#cấu-trúc-dự-án)
+3. [Thay đổi theo mô hình MVC](#thay-đổi-theo-mô-hình-mvc)
+4. [Gửi Pull Requests](#gửi-pull-requests)
+5. [Cấu trúc dự án](#cấu-trúc-dự-án)
 
 ## Fork repository
 
@@ -182,6 +181,3 @@ QLDIEM/
 │   │               ├── model/      # Các lớp của tầng Model
 │   │               ├── view/       # Các lớp của tầng View
 │   │               └── controller/ # Các lớp của tầng Controller
-
-
-
