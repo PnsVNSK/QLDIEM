@@ -11,6 +11,8 @@ import Controller.QuanLyLopController;
 import Controller.PhanCongGiaoVienController;
 import Controller.QuanLySinhVienController;
 import Controller.QuanLyGiaoVienController;
+import Model.LoginModel;
+import View.ModernLoginView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -132,16 +134,24 @@ public class ModernMainController {
         
         if (option == JOptionPane.YES_OPTION) {
             view.dispose();
-            
-            // Return to login screen
-            SwingUtilities.invokeLater(() -> {
-                try {
-                    Class<?> loginMainClass = Class.forName("Test.LoginMain");
-                    loginMainClass.getMethod("main", String[].class).invoke(null, (Object) new String[]{});
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            });
+//            SwingUtilities.invokeLater(() -> {
+//                try {
+//                    Class<?> loginMainClass = Class.forName("Test.LoginMain");
+//                    loginMainClass.getMethod("main", String[].class).invoke(null, (Object) new String[]{});
+//                } catch (Exception ex) {
+//                    ex.printStackTrace();
+//                }
+//            });
+LoginModel loginModel = new LoginModel();
+                
+                // Create and show login view
+                ModernLoginView loginView = new ModernLoginView();
+                
+                // Create login controller
+                ModernLoginController loginController = new ModernLoginController(loginView, loginModel);
+                
+                // Show the login window
+                loginView.setVisible(true);
         }
     }
 }

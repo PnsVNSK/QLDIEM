@@ -38,7 +38,7 @@ public class ModernLoginView extends JFrame {
     
     private void initComponents() {
         // Frame setup
-        setTitle("QLDIEM - Đăng nhập hệ thống");
+        setTitle("Quan ly diem - Đăng nhập hệ thống");
         setSize(500, 700);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,8 +69,8 @@ public class ModernLoginView extends JFrame {
         ));
         
         // Show password button
-        btnShowPassword = new JButton("👁");
-        btnShowPassword.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        btnShowPassword = new JButton("🙈");
+        btnShowPassword.setFont(new Font("Segoe UI Emoji", Font.PLAIN,18));
         btnShowPassword.setPreferredSize(new Dimension(45, 45));
         btnShowPassword.setBackground(Color.WHITE);
         btnShowPassword.setBorder(BorderFactory.createLineBorder(new Color(206, 212, 218), 1));
@@ -129,20 +129,20 @@ public class ModernLoginView extends JFrame {
     
     private JPasswordField createPasswordField(String placeholder) {
         JPasswordField field = new JPasswordField();
-        field.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        field.setFont(new Font("Segoe UI", Font.PLAIN,18));
         field.setPreferredSize(new Dimension(250, 45));
         field.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(new Color(206, 212, 218), 1),
             BorderFactory.createEmptyBorder(8, 12, 8, 12)
         ));
-        field.setEchoChar('●');
+        field.setEchoChar('*');
         
         return field;
     }
     
     private JButton createButton(String text, Color backgroundColor, Color textColor) {
         JButton button = new JButton(text);
-        button.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        button.setFont(new Font("Segoe UI Emoji", Font.PLAIN,18));
         button.setForeground(textColor);
         button.setBackground(backgroundColor);
         button.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -179,15 +179,15 @@ public class ModernLoginView extends JFrame {
         headerPanel.setBackground(BACKGROUND_COLOR);
         headerPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-        JLabel logoLabel = new JLabel("QLDIEM", SwingConstants.CENTER);
-        logoLabel.setFont(new Font("Segoe UI", Font.BOLD, 36));
+        JLabel logoLabel = new JLabel("Quản lý điểm", SwingConstants.CENTER);
+        logoLabel.setFont(new Font("Segoe UI", Font.PLAIN,36));
         logoLabel.setForeground(PRIMARY_COLOR);
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         
-        JLabel titleLabel = new JLabel("QLDIEM", SwingConstants.CENTER);
-        titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 28));
-        titleLabel.setForeground(PRIMARY_COLOR);
-        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+//        JLabel titleLabel = new JLabel("QLDIEM", SwingConstants.CENTER);
+//        titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 28));
+//        titleLabel.setForeground(PRIMARY_COLOR);
+//        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         
         JLabel subtitleLabel = new JLabel("Hệ thống Quản lý Điểm sinh viên", SwingConstants.CENTER);
         subtitleLabel.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -196,7 +196,7 @@ public class ModernLoginView extends JFrame {
         
         headerPanel.add(logoLabel);
         headerPanel.add(Box.createVerticalStrut(10));
-        headerPanel.add(titleLabel);
+        //headerPanel.add(titleLabel);
         headerPanel.add(Box.createVerticalStrut(5));
         headerPanel.add(subtitleLabel);
         
@@ -263,21 +263,21 @@ public class ModernLoginView extends JFrame {
         formPanel.add(passwordPanel, gbc);
         
         // User type field
-        gbc.gridy = 3;
-        gbc.gridx = 0;
-        gbc.fill = GridBagConstraints.NONE;
-        gbc.weightx = 0;
-        JLabel lblUserType = new JLabel("Loại người dùng:");
-        lblUserType.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        lblUserType.setForeground(TEXT_PRIMARY);
-        lblUserType.setPreferredSize(new Dimension(120, 25));
-        formPanel.add(lblUserType, gbc);
-        
-        gbc.gridx = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.weightx = 1.0;
-        cbUserType.setPreferredSize(new Dimension(300, 45));
-        formPanel.add(cbUserType, gbc);
+//        gbc.gridy = 3;
+//        gbc.gridx = 0;
+//        gbc.fill = GridBagConstraints.NONE;
+//        gbc.weightx = 0;
+//        JLabel lblUserType = new JLabel("Loại người dùng:");
+//        lblUserType.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+//        lblUserType.setForeground(TEXT_PRIMARY);
+//        lblUserType.setPreferredSize(new Dimension(120, 25));
+//        formPanel.add(lblUserType, gbc);
+//        
+//        gbc.gridx = 1;
+//        gbc.fill = GridBagConstraints.HORIZONTAL;
+//        gbc.weightx = 1.0;
+//        cbUserType.setPreferredSize(new Dimension(300, 45));
+//        formPanel.add(cbUserType, gbc);
         
         // Status label
         gbc.gridy = 4;
@@ -311,16 +311,6 @@ public class ModernLoginView extends JFrame {
         
         add(mainPanel, BorderLayout.CENTER);
         
-        // Footer
-        JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        footerPanel.setBackground(BACKGROUND_COLOR);
-        
-        JLabel footerLabel = new JLabel("© 2024 QLDIEM - Phát triển bởi Nhóm Dev");
-        footerLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
-        footerLabel.setForeground(TEXT_SECONDARY);
-        
-        footerPanel.add(footerLabel);
-        add(footerPanel, BorderLayout.SOUTH);
     }
     
     private void setupEventHandlers() {
@@ -338,10 +328,10 @@ public class ModernLoginView extends JFrame {
         passwordVisible = !passwordVisible;
         if (passwordVisible) {
             txtPassword.setEchoChar((char) 0);
-            btnShowPassword.setText("Ẩn");
+            btnShowPassword.setText("🙉");
         } else {
-            txtPassword.setEchoChar('●');
-            btnShowPassword.setText("Hiện");
+            txtPassword.setEchoChar('*');
+            btnShowPassword.setText("🙈");
         }
     }
     
